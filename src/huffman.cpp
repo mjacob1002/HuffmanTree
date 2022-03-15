@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include<sstream>
-
+#include <stdexcept>
 std::unordered_map<char, int> HuffmanTree::getFrequencyTable(std::string filename){
     std::unordered_map<char, int> frequency_table; // hash map that will store frequencies
     std::ifstream ifs(filename); // filestreaming
@@ -28,8 +28,12 @@ HuffmanTree::HuffmanTree(std::string keyFile){
         HuffNode* huff = new HuffNode(s); // pointer to HuffNode with a string
         mheap.add(huff, frequency_table[s[0]]); // add the HuffNode* pointer, with the frequency of its string, in the minHeap
     }
+    
+    HuffNode* pseudoEOF = new HuffNode(std::string(1, pEOF)); // don't know why this is highlighted, pEOF is declared
+    mheap.add(pseudoEOF, -1); // pseudo EOF in the priority queue; used to delimit the end of a decoding
     std::cout << frequency_table.size() << std::endl;
     _root = buildTree(mheap); // assign the root of the huffman tree
+    pEOF_encoded = encode(std::string(1,pEOF)); // assign the pEOF a value
 
 }
 
@@ -63,16 +67,20 @@ std::string HuffmanTree::encode(const std::string& message) const{
         char charac = message.at(curr_index); // observe the current character
         if(!curr -> left && !curr -> right) // at a leaf node, found the character, nothing else to observe, go back to root for next character
         {
+            if(curr -> value != std::string(1, charac)){
+                std::string message = "Hit a leaf, but the value of " + std::string(1, charac) + "isn't the value of " + curr -> value + "in the current node\n";
+                throw std::runtime_error(message);
+            }
             curr = _root;
             curr_index++;
             continue;
         }
         if(curr -> left && curr -> left -> contains(charac)){
             curr = curr -> left;
-            sequence.append("0");
+            sequence += "0";
         } else {
             curr = curr -> right;
-            sequence.append("1");
+            sequence += "1";
         }
         
     }
@@ -106,6 +114,9 @@ std::string HuffmanTree::decodeMessage(const std::string& binary) const{
             curr = curr -> right;
         }
         if(!curr -> left && !curr -> right){ // leaf node
+            if((curr -> value).at(0) == pEOF){ // if the current value is the pEOF, scrub from the decoded message
+                return message;
+            }
             message += curr -> value;
             curr = _root;
         }
@@ -119,3 +130,54 @@ std::ostream& operator<<(std::ostream& os, const HuffmanTree& rhs){
     return os;
 }
 
+std::string HuffmanTree::encodeMessage(const std::string& message) const{
+    std::string to_encode = message + std::string(1, pEOF);
+    return encode(to_encode);
+}
+
+HuffmanTree::~HuffmanTree(){
+    _clean(_root);
+    _root = nullptr;
+}
+
+void HuffmanTree::_clean(HuffNode* currRoot){
+    if(!currRoot) return; // base case of nullptr;
+    // post-order cleanup
+    _clean(currRoot -> left);
+    _clean(currRoot -> right);
+    delete currRoot;
+}
+
+void HuffmanTree::_copy(HuffNode*& copyee, const HuffNode* to_copy){
+    if(!to_copy) return; // base case, nothing to copy from the tree to be copied
+    copyee = new HuffNode(to_copy -> value);
+    
+    _copy(copyee -> left, to_copy -> left); // copy the left subtree
+    _copy(copyee -> right, to_copy -> right); // copy the right subtree
+}
+
+HuffmanTree& HuffmanTree::operator=(const HuffmanTree& rhs){
+    if(this == &rhs) return *this;
+    _clean(_root);
+    _root = nullptr;
+    _copy(_root, rhs._root);
+    pEOF_encoded = rhs.pEOF_encoded;
+    return *this;
+}
+
+HuffmanTree::HuffmanTree(const HuffmanTree& other){
+    _copy(_root, other._root);
+    pEOF_encoded = other.pEOF_encoded;
+}
+
+HuffmanTree::HuffmanTree(HuffmanTree&& rhs){
+    _root = rhs._root; // current tree takes ownership
+    rhs._root = nullptr;
+    pEOF_encoded = rhs.pEOF_encoded;
+}
+
+HuffmanTree& HuffmanTree::operator=(HuffmanTree&& rhs){
+    _root = rhs._root;
+    pEOF_encoded = rhs.pEOF_encoded;
+    rhs._root = nullptr;
+}
