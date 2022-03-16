@@ -181,3 +181,11 @@ HuffmanTree& HuffmanTree::operator=(HuffmanTree&& rhs){
     pEOF_encoded = rhs.pEOF_encoded;
     rhs._root = nullptr;
 }
+
+void HuffmanTree::encodeToFile(std::string message, std::string filename){
+    std::string ones_zeros = encode(message);
+    Padder p(ones_zeros); // does the padding
+    std::vector<char> characters = p.getChars(); // ones and zeros converted to characters
+    BinaryWriter bw(filename); // creates binary writer to the file
+    bw.writeMessage(characters); // writes the characters to a binary file
+}

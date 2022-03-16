@@ -1,4 +1,9 @@
+#pragma once
 #include "minheap.h"
+#include "binary_reader.h"
+#include "binary_writer.h"
+#include "padder.h"
+
 #include <unordered_map>
 #include <fstream>
 #include <algorithm>
@@ -40,6 +45,6 @@ class HuffmanTree{
         ~HuffmanTree(); // destructor of a HuffmanTree
         HuffmanTree(const HuffmanTree& other);
         HuffmanTree& operator=(const HuffmanTree& rhs);
-        HuffmanTree(HuffmanTree&&); // r-value
-        HuffmanTree& operator=(HuffmanTree&& rhs)
+        HuffmanTree(HuffmanTree&&); // move constructor
+        HuffmanTree& operator=(HuffmanTree&& rhs); // move assignment operator
 };
