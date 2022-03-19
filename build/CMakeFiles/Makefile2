@@ -63,6 +63,8 @@ CMAKE_BINARY_DIR = /Users/mathewjacob/dev/cppprojects/HuffmanTree/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_binary_reader.dir/all
+all: CMakeFiles/test_binary_writer.dir/all
 all: CMakeFiles/huffman_tree.dir/all
 all: CMakeFiles/test_priority.dir/all
 .PHONY : all
@@ -72,9 +74,63 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_binary_reader.dir/clean
+clean: CMakeFiles/test_binary_writer.dir/clean
 clean: CMakeFiles/huffman_tree.dir/clean
 clean: CMakeFiles/test_priority.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_binary_reader.dir
+
+# All Build rule for target.
+CMakeFiles/test_binary_reader.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=7,8,9 "Built target test_binary_reader"
+.PHONY : CMakeFiles/test_binary_reader.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_binary_reader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_binary_reader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_binary_reader.dir/rule
+
+# Convenience name for target.
+test_binary_reader: CMakeFiles/test_binary_reader.dir/rule
+.PHONY : test_binary_reader
+
+# clean rule for target.
+CMakeFiles/test_binary_reader.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/clean
+.PHONY : CMakeFiles/test_binary_reader.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_binary_writer.dir
+
+# All Build rule for target.
+CMakeFiles/test_binary_writer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=10,11,12 "Built target test_binary_writer"
+.PHONY : CMakeFiles/test_binary_writer.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_binary_writer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_binary_writer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_binary_writer.dir/rule
+
+# Convenience name for target.
+test_binary_writer: CMakeFiles/test_binary_writer.dir/rule
+.PHONY : test_binary_writer
+
+# clean rule for target.
+CMakeFiles/test_binary_writer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/clean
+.PHONY : CMakeFiles/test_binary_writer.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/huffman_tree.dir
@@ -83,12 +139,12 @@ clean: CMakeFiles/test_priority.dir/clean
 CMakeFiles/huffman_tree.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=1,2,3 "Built target huffman_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target huffman_tree"
 .PHONY : CMakeFiles/huffman_tree.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/huffman_tree.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/huffman_tree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles 0
 .PHONY : CMakeFiles/huffman_tree.dir/rule
@@ -109,7 +165,7 @@ CMakeFiles/huffman_tree.dir/clean:
 CMakeFiles/test_priority.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_priority.dir/build.make CMakeFiles/test_priority.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_priority.dir/build.make CMakeFiles/test_priority.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=4,5 "Built target test_priority"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=13,14 "Built target test_priority"
 .PHONY : CMakeFiles/test_priority.dir/all
 
 # Build rule for subdir invocation for target.

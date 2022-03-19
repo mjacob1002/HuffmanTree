@@ -19,7 +19,7 @@ std::unordered_map<char, int> HuffmanTree::getFrequencyTable(std::string filenam
 
 HuffmanTree::HuffmanTree(std::string keyFile){
     MinHeap<HuffNode*> mheap;
-    std::cout << "HEAP CONSTRUCTED\n";
+    // std::cout << "HEAP CONSTRUCTED\n";
     std::unordered_map<char, int> frequency_table = getFrequencyTable(keyFile); // generate freq table
     std::unordered_map<std::string, HuffNode*> huff_table; // maps a string to its huffnode
     for(auto& it : frequency_table){
@@ -31,7 +31,7 @@ HuffmanTree::HuffmanTree(std::string keyFile){
     
     HuffNode* pseudoEOF = new HuffNode(std::string(1, pEOF)); // don't know why this is highlighted, pEOF is declared
     mheap.add(pseudoEOF, -1); // pseudo EOF in the priority queue; used to delimit the end of a decoding
-    std::cout << frequency_table.size() << std::endl;
+    // std::cout << frequency_table.size() << std::endl;
     _root = buildTree(mheap); // assign the root of the huffman tree
     pEOF_encoded = encode(std::string(1,pEOF)); // assign the pEOF a value
 
@@ -131,7 +131,8 @@ std::ostream& operator<<(std::ostream& os, const HuffmanTree& rhs){
 }
 
 std::string HuffmanTree::encodeMessage(const std::string& message) const{
-    std::string to_encode = message + std::string(1, pEOF);
+    std::string to_encode = message + std::string(1, pEOF); // add the pseudo EOF at the end of the string
+    // std::cout << "ENCODING " << to_encode << "\n";
     return encode(to_encode);
 }
 
@@ -180,12 +181,19 @@ HuffmanTree& HuffmanTree::operator=(HuffmanTree&& rhs){
     _root = rhs._root;
     pEOF_encoded = rhs.pEOF_encoded;
     rhs._root = nullptr;
+    return *this;
 }
 
 void HuffmanTree::encodeToFile(std::string message, std::string filename){
-    std::string ones_zeros = encode(message);
+    std::string ones_zeros = encodeMessage(message); // get the ones and zeros, with the pEOF included
     Padder p(ones_zeros); // does the padding
     std::vector<char> characters = p.getChars(); // ones and zeros converted to characters
     BinaryWriter bw(filename); // creates binary writer to the file
     bw.writeMessage(characters); // writes the characters to a binary file
+}
+
+std::string HuffmanTree::decodeFile(std::string filename){
+    BinaryReader br(filename);
+    std::string message = br.readFromFile(); // get the raw ones and 0s from the file
+    return decodeMessage(message);
 }

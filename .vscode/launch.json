@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug C++",
-            "program": "${workspaceFolder}/build/bin/huffman_tree",
+            "program": "${workspaceFolder}/build/bin/test_binary_writer",
             "stopAtEntry" : true,
             "args": [],
             "cwd": "${workspaceFolder}"

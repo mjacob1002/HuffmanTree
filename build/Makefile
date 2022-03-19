@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_binary_reader
+
+# Build rule for target.
+test_binary_reader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_binary_reader
+.PHONY : test_binary_reader
+
+# fast build rule for target.
+test_binary_reader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/build
+.PHONY : test_binary_reader/fast
+
+#=============================================================================
+# Target rules for targets named test_binary_writer
+
+# Build rule for target.
+test_binary_writer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_binary_writer
+.PHONY : test_binary_writer
+
+# fast build rule for target.
+test_binary_writer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/build
+.PHONY : test_binary_writer/fast
+
+#=============================================================================
 # Target rules for targets named huffman_tree
 
 # Build rule for target.
@@ -141,6 +167,60 @@ test_priority: cmake_check_build_system
 test_priority/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_priority.dir/build.make CMakeFiles/test_priority.dir/build
 .PHONY : test_priority/fast
+
+src/binary_reader.o: src/binary_reader.cpp.o
+.PHONY : src/binary_reader.o
+
+# target to build an object file
+src/binary_reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/src/binary_reader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o
+.PHONY : src/binary_reader.cpp.o
+
+src/binary_reader.i: src/binary_reader.cpp.i
+.PHONY : src/binary_reader.i
+
+# target to preprocess a source file
+src/binary_reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/src/binary_reader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.i
+.PHONY : src/binary_reader.cpp.i
+
+src/binary_reader.s: src/binary_reader.cpp.s
+.PHONY : src/binary_reader.s
+
+# target to generate assembly for a file
+src/binary_reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/src/binary_reader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.s
+.PHONY : src/binary_reader.cpp.s
+
+src/binary_writer.o: src/binary_writer.cpp.o
+.PHONY : src/binary_writer.o
+
+# target to build an object file
+src/binary_writer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/src/binary_writer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o
+.PHONY : src/binary_writer.cpp.o
+
+src/binary_writer.i: src/binary_writer.cpp.i
+.PHONY : src/binary_writer.i
+
+# target to preprocess a source file
+src/binary_writer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/src/binary_writer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.i
+.PHONY : src/binary_writer.cpp.i
+
+src/binary_writer.s: src/binary_writer.cpp.s
+.PHONY : src/binary_writer.s
+
+# target to generate assembly for a file
+src/binary_writer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/src/binary_writer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.s
+.PHONY : src/binary_writer.cpp.s
 
 src/huffman.o: src/huffman.cpp.o
 .PHONY : src/huffman.o
@@ -190,6 +270,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/padder.o: src/padder.cpp.o
+.PHONY : src/padder.o
+
+# target to build an object file
+src/padder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/padder.cpp.o
+.PHONY : src/padder.cpp.o
+
+src/padder.i: src/padder.cpp.i
+.PHONY : src/padder.i
+
+# target to preprocess a source file
+src/padder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/padder.cpp.i
+.PHONY : src/padder.cpp.i
+
+src/padder.s: src/padder.cpp.s
+.PHONY : src/padder.s
+
+# target to generate assembly for a file
+src/padder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/huffman_tree.dir/build.make CMakeFiles/huffman_tree.dir/src/padder.cpp.s
+.PHONY : src/padder.cpp.s
+
 src/test_priority.o: src/test_priority.cpp.o
 .PHONY : src/test_priority.o
 
@@ -214,6 +318,54 @@ src/test_priority.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_priority.dir/build.make CMakeFiles/test_priority.dir/src/test_priority.cpp.s
 .PHONY : src/test_priority.cpp.s
 
+tests/test_binary_reader.o: tests/test_binary_reader.cpp.o
+.PHONY : tests/test_binary_reader.o
+
+# target to build an object file
+tests/test_binary_reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/tests/test_binary_reader.cpp.o
+.PHONY : tests/test_binary_reader.cpp.o
+
+tests/test_binary_reader.i: tests/test_binary_reader.cpp.i
+.PHONY : tests/test_binary_reader.i
+
+# target to preprocess a source file
+tests/test_binary_reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/tests/test_binary_reader.cpp.i
+.PHONY : tests/test_binary_reader.cpp.i
+
+tests/test_binary_reader.s: tests/test_binary_reader.cpp.s
+.PHONY : tests/test_binary_reader.s
+
+# target to generate assembly for a file
+tests/test_binary_reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_reader.dir/build.make CMakeFiles/test_binary_reader.dir/tests/test_binary_reader.cpp.s
+.PHONY : tests/test_binary_reader.cpp.s
+
+tests/test_binary_writer.o: tests/test_binary_writer.cpp.o
+.PHONY : tests/test_binary_writer.o
+
+# target to build an object file
+tests/test_binary_writer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/tests/test_binary_writer.cpp.o
+.PHONY : tests/test_binary_writer.cpp.o
+
+tests/test_binary_writer.i: tests/test_binary_writer.cpp.i
+.PHONY : tests/test_binary_writer.i
+
+# target to preprocess a source file
+tests/test_binary_writer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/tests/test_binary_writer.cpp.i
+.PHONY : tests/test_binary_writer.cpp.i
+
+tests/test_binary_writer.s: tests/test_binary_writer.cpp.s
+.PHONY : tests/test_binary_writer.s
+
+# target to generate assembly for a file
+tests/test_binary_writer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_binary_writer.dir/build.make CMakeFiles/test_binary_writer.dir/tests/test_binary_writer.cpp.s
+.PHONY : tests/test_binary_writer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,16 +375,33 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... huffman_tree"
+	@echo "... test_binary_reader"
+	@echo "... test_binary_writer"
 	@echo "... test_priority"
+	@echo "... src/binary_reader.o"
+	@echo "... src/binary_reader.i"
+	@echo "... src/binary_reader.s"
+	@echo "... src/binary_writer.o"
+	@echo "... src/binary_writer.i"
+	@echo "... src/binary_writer.s"
 	@echo "... src/huffman.o"
 	@echo "... src/huffman.i"
 	@echo "... src/huffman.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/padder.o"
+	@echo "... src/padder.i"
+	@echo "... src/padder.s"
 	@echo "... src/test_priority.o"
 	@echo "... src/test_priority.i"
 	@echo "... src/test_priority.s"
+	@echo "... tests/test_binary_reader.o"
+	@echo "... tests/test_binary_reader.i"
+	@echo "... tests/test_binary_reader.s"
+	@echo "... tests/test_binary_writer.o"
+	@echo "... tests/test_binary_writer.i"
+	@echo "... tests/test_binary_writer.s"
 .PHONY : help
 
 

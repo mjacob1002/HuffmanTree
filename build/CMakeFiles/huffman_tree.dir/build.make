@@ -97,19 +97,67 @@ CMakeFiles/huffman_tree.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman_tree.dir/src/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/main.cpp -o CMakeFiles/huffman_tree.dir/src/main.cpp.s
 
+CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o: CMakeFiles/huffman_tree.dir/flags.make
+CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o: ../src/binary_writer.cpp
+CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o: CMakeFiles/huffman_tree.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o -MF CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o.d -o CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o -c /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_writer.cpp
+
+CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_writer.cpp > CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.i
+
+CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_writer.cpp -o CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.s
+
+CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o: CMakeFiles/huffman_tree.dir/flags.make
+CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o: ../src/binary_reader.cpp
+CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o: CMakeFiles/huffman_tree.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o -MF CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o.d -o CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o -c /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_reader.cpp
+
+CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_reader.cpp > CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.i
+
+CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/binary_reader.cpp -o CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.s
+
+CMakeFiles/huffman_tree.dir/src/padder.cpp.o: CMakeFiles/huffman_tree.dir/flags.make
+CMakeFiles/huffman_tree.dir/src/padder.cpp.o: ../src/padder.cpp
+CMakeFiles/huffman_tree.dir/src/padder.cpp.o: CMakeFiles/huffman_tree.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/huffman_tree.dir/src/padder.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/huffman_tree.dir/src/padder.cpp.o -MF CMakeFiles/huffman_tree.dir/src/padder.cpp.o.d -o CMakeFiles/huffman_tree.dir/src/padder.cpp.o -c /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/padder.cpp
+
+CMakeFiles/huffman_tree.dir/src/padder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman_tree.dir/src/padder.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/padder.cpp > CMakeFiles/huffman_tree.dir/src/padder.cpp.i
+
+CMakeFiles/huffman_tree.dir/src/padder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman_tree.dir/src/padder.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathewjacob/dev/cppprojects/HuffmanTree/src/padder.cpp -o CMakeFiles/huffman_tree.dir/src/padder.cpp.s
+
 # Object files for target huffman_tree
 huffman_tree_OBJECTS = \
 "CMakeFiles/huffman_tree.dir/src/huffman.cpp.o" \
-"CMakeFiles/huffman_tree.dir/src/main.cpp.o"
+"CMakeFiles/huffman_tree.dir/src/main.cpp.o" \
+"CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o" \
+"CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o" \
+"CMakeFiles/huffman_tree.dir/src/padder.cpp.o"
 
 # External object files for target huffman_tree
 huffman_tree_EXTERNAL_OBJECTS =
 
 bin/huffman_tree: CMakeFiles/huffman_tree.dir/src/huffman.cpp.o
 bin/huffman_tree: CMakeFiles/huffman_tree.dir/src/main.cpp.o
+bin/huffman_tree: CMakeFiles/huffman_tree.dir/src/binary_writer.cpp.o
+bin/huffman_tree: CMakeFiles/huffman_tree.dir/src/binary_reader.cpp.o
+bin/huffman_tree: CMakeFiles/huffman_tree.dir/src/padder.cpp.o
 bin/huffman_tree: CMakeFiles/huffman_tree.dir/build.make
 bin/huffman_tree: CMakeFiles/huffman_tree.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/huffman_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mathewjacob/dev/cppprojects/HuffmanTree/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/huffman_tree"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/huffman_tree.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
